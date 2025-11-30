@@ -2,7 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio de Sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,26 +13,28 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
+            padding: 20px;
         }
         .login-box {
             background: #fff;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 300px;
-        }
-        input {
             width: 100%;
-            padding: 10px;
+            max-width: 350px;
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
             margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
         }
         button {
-            width: 100%;
-            padding: 10px;
             background: #0e75f7;
             color: white;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
@@ -42,11 +46,10 @@
 
     <div class="login-box">
         <h2>Iniciar Sesión</h2>
-
         <form action="login.php" method="POST">
             <input type="text" name="usuario" placeholder="Usuario" required>
             <input type="password" name="clave" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
+            <button type="submit">Entrar</button>
         </form>
     </div>
 

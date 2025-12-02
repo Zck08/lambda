@@ -1,57 +1,53 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-        .login-box {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 350px;
-        }
-        input, button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background: #0e75f7;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #0059c9;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Página responsiva (misma apariencia móvil/desktop)</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="page">
+<header class="site-header">
+<h1 class="brand">Mi Sitio</h1>
+<nav class="nav">
+<a href="#">Inicio</a>
+<a href="#">Servicios</a>
+<a href="#">Contacto</a>
+</nav>
+</header>
 
-    <div class="login-box">
-        <h2>Iniciar Sesión</h2>
-        <form action="login.php" method="POST">
-            <input type="text" name="usuario" placeholder="Usuario" required>
-            <input type="password" name="clave" placeholder="Contraseña" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
 
+<main class="hero">
+<h2 class="hero-title">Diseño que se ve igual en móvil y escritorio</h2>
+<p class="hero-sub">Usamos unidades fluidas, limitamos el ancho máximo y centramos el contenido para mantener la misma apariencia.</p>
+<div class="cta-row">
+<button class="btn">Empezar</button>
+<button class="btn ghost">Aprender más</button>
+</div>
+</main>
+
+
+<section class="cards">
+<article class="card">
+<h3>Card 1</h3>
+<p>Contenido breve que se ajusta y mantiene proporciones entre dispositivos.</p>
+</article>
+<article class="card">
+<h3>Card 2</h3>
+<p>Usa padding y tipografía relativa para conservar la misma sensación.</p>
+</article>
+<article class="card">
+<h3>Card 3</h3>
+<p>Sin cambios por media queries: el diseño usa reglas fluidas.</p>
+</article>
+</section>
+
+
+<footer class="site-footer">
+<p>© 2025 Mi Sitio · Todos los derechos reservados</p>
+</footer>
+</div>
 </body>
 </html>

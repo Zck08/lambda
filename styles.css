@@ -1,0 +1,105 @@
+:root{
+color:#0f172a;
+background: #f8fafc;
+}
+
+
+/* contenedor central que limita ancho y centra siempre */
+.page{
+max-width:var(--max-width);
+margin:0 auto;
+padding:calc(var(--page-padding));
+}
+
+
+.site-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:1rem;
+padding-block:1rem;
+}
+.brand{
+font-size:clamp(1.1rem, 2.2vw, 1.6rem); /* escala fluida */
+letter-spacing:0.4px;
+}
+
+
+.nav{
+display:flex;
+gap:0.75rem;
+}
+.nav a{
+text-decoration:none;
+font-size:clamp(0.9rem, 1.8vw, 1rem);
+color:var(--muted);
+}
+
+
+.hero{
+background:linear-gradient(180deg, rgba(37,99,235,0.08), rgba(37,99,235,0.02));
+padding:clamp(1rem, 4vw, 2.2rem);
+border-radius:var(--radius);
+margin-block:1rem 1.25rem;
+}
+.hero-title{
+font-size:clamp(1.25rem, 4.5vw, 2rem);
+margin-bottom:0.5rem;
+}
+.hero-sub{
+font-size:clamp(0.95rem, 2.6vw, 1.05rem);
+color:var(--muted);
+margin-bottom:1rem;
+}
+
+
+.cta-row{
+display:flex;
+gap:0.6rem;
+flex-wrap:wrap; /* evita overflow en pantallas pequeñs */
+}
+.btn{
+border:0;
+padding:0.6rem 1rem;
+border-radius:10px;
+font-size:clamp(0.95rem, 2.8vw, 1rem);
+cursor:pointer;
+background:var(--accent);
+color:white;
+}
+
+
+.btn.ghost{
+background:transparent;
+color:var(--accent);
+border:1px solid rgba(37,99,235,0.12);
+}
+
+
+.cards{
+display:flex;
+gap:1rem;
+margin-block:1rem 1.5rem;
+/* para mantener la misma apariencia entre móvil/desktop, usamos `flex-wrap` y `min-width` en las cards */
+flex-wrap:wrap;
+}
+.card{
+flex:1 1 220px; /* crecerá y encogerá manteniendo una base mínima */
+background:white;
+padding:1rem;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(2,6,23,0.06);
+}
+.card h3{font-size:clamp(1rem,2.6vw,1.05rem);margin-bottom:0.4rem}
+.card p{color:var(--muted);font-size:clamp(0.9rem,2.2vw,1rem)}
+
+
+.site-footer{color:var(--muted);text-align:center;padding:1.25rem 0;font-size:0.95rem}
+
+
+/* pequeñas mejoras para que no se vea distinto en móviles (evitar texto demasiado grande o demasiado pequeño) */
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+
+/* Nota: no se usan media queries para cambiar la estructura.
+El diseño usa tamaños fluidos y límites (`max-width`, `clamp`, `vw`) para que la apariencia se mantenga similar. */

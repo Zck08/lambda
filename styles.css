@@ -1,93 +1,128 @@
-:root{
-color:#120629;
-background: #EED0F2;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+font-family: Verdana, Geneva, sans-serif;
+	color: hsl(41, 70%, 9%);
+	background: hsl(59 77% 86%);
+	min-block-size: 100svb;
+	display: grid;
+	place-items: center;
 }
 
+.button-index {
+  appearance: none;
+  background-color: #f1e182;
+  border: 2px solid #7e7d49;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #462d15;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  padding: 32px 48px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 
-/* contenedor central que limita ancho y centra siempre */
-.page{
-max-width:var(--max-width);
-margin:0 auto;
-padding:calc(var(--page-padding));
+  /* No ocupar todo el ancho */
+  width: auto;
+  white-space: nowrap;
+
+  /* 👉 Centrado arriba con margen */
+  position: absolute;
+  top: 2rem;        /* margen superior */
+  left: 50%;        /* centrar horizontalmente */
+  transform: translateX(-50%); /* mover solo horizontal */
+  }
+
+
+.button-index:disabled {
+  pointer-events: none;
 }
 
-
-.site-header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:1rem;
-padding-block:1rem;
-}
-.brand{
-font-size:clamp(1.1rem, 2.2vw, 1.6rem); /* escala fluida */
-letter-spacing:0.4px;
+.button-index:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translate(-50%, calc(-50% - 2px));
 }
 
-.hero{
-background:linear-gradient(180deg, rgba(37,99,235,0.08), rgba(37,99,235,0.02));
-padding:clamp(1rem, 4vw, 2.2rem);
-border-radius:var(--radius);
-margin-block:1rem 1.25rem;
-}
-.hero-title{
-font-size:clamp(1.25rem, 4.5vw, 2rem);
-margin-bottom:0.5rem;
-}
-.hero-sub{
-font-size:clamp(0.95rem, 2.6vw, 1.05rem);
-color:var(--muted);
-margin-bottom:1rem;
+.button-index:active {
+  box-shadow: none;
+  transform: translate(-50%, -50%);
 }
 
-
-.cta-row{
-display:flex;
-gap:0.6rem;
-flex-wrap:wrap; /* evita overflow en pantallas pequeñs */
-}
-.btn{
-border:0;
-padding:0.6rem 1rem;
-border-radius:10px;
-font-size:clamp(0.95rem, 2.8vw, 1rem);
-cursor:pointer;
-background:var(--accent);
-color: #EED0F2;
+.love {
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  background: rgb(33, 4, 53);
 }
 
-
-.btn.ghost{
-background:transparent;
-color:var(--accent);
-border:1px solid rgba(37,99,235,0.12);
+.love:before,
+.love:after {
+  content: "";
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgb(33, 4, 53);
 }
 
-
-.cards{
-display:flex;
-gap:1rem;
-margin-block:1rem 1.5rem;
-/* para mantener la misma apariencia entre móvil/desktop, usamos `flex-wrap` y `min-width` en las cards */
-flex-wrap:wrap;
+.love {
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  background: rgb(33, 4, 53);
+  position: relative;
+  top: 10rem;
+  left: 10rem;
 }
-.card{
-flex:1 1 220px; /* crecerá y encogerá manteniendo una base mínima */
-background:white;
-padding:1rem;
-border-radius:12px;
-box-shadow:0 6px 18px rgba(2,6,23,0.06);
+
+.love:before,
+.love:after {
+  content: "";
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgb(33, 4, 53);
+  position: absolute;
 }
-.card h3{font-size:clamp(1rem,2.6vw,1.05rem);margin-bottom:0.4rem}
-.card p{color:var(--muted);font-size:clamp(0.9rem,2.2vw,1rem)}
 
+.love:before {
+  top: 0;
+  left: -25px;
+}
 
-.site-footer{color:var(--muted);text-align:center;padding:1.25rem 0;font-size:0.95rem}
+.love:after {
+  top: -25px;
+}
 
+.love {
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  background: rgb(33, 4, 53);
+  position: relative;
+  top: 10rem;
+  left: 10rem;
+  animation: beating 2s ease infinite;
+}
 
-/* pequeñas mejoras para que no se vea distinto en móviles (evitar texto demasiado grande o demasiado pequeño) */
-@media (prefers-reduced-motion: reduce){*{transition:none!important}}
-
-
-/* Nota: no se usan media queries para cambiar la estructura.
-El diseño usa tamaños fluidos y límites (`max-width`, `clamp`, `vw`) para que la apariencia se mantenga similar. */
+@keyframes beating {
+  0% {
+  	transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(2);
+  }
+  100% {
+  	transform: rotate(45deg) scale(1);
+  }
+}

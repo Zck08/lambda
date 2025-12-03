@@ -11,34 +11,59 @@ font-family: Verdana, Geneva, sans-serif;
 }
 
 .button-index {
-color: #462d15;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-background: transparent;
-border: none;
+  color: #462d15;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 
-/* Tamaño responsivo: mínimo 48px, ideal 12vw, máximo 160px */
-font-size: clamp(64px, 12vw, 160px);
+  /* tamaño responsivo */
+  font-size: clamp(64px, 12vw, 150px);
+  font-weight: 700;
+  line-height: 1.05;
 
+  padding: clamp(12px, 2vw, 32px) clamp(10px, 2vw, 48px);
+  text-align: center;
+  white-space: nowrap;
 
-font-weight: 700;
-line-height: 1.05;
-margin: 0;
-min-height: 100px;
+  /* centrado horizontal y margen superior */
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+/* contenedor inline de letras */
+.button-index .letters {
+  display: inline-flex;
+  gap: 0; /* sin separación extra */
+  pointer-events: none; /* no bloquear el click del botón */
+}
 
-/* padding suficiente para que no se vea pegado */
-padding: clamp(12px, 2vw, 32px) clamp(10px, 2vw, 48px);
+/* estado inicial de cada letra */
+.button-index .letters span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.36s ease;
+}
 
+/* al añadir la clase .animate, las letras aparecen */
+.button-index.animate .letters span {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-text-align: center;
-white-space: nowrap;
+/* accesibilidad: foco */
+.button-index:focus {
+  outline: 3px dashed rgba(70,45,21,0.25);
+  outline-offset: 6px;
+}
 
-
-/* Centrado horizontal y margen superior */
-position: absolute;
-top: 2rem; /* distancia desde la parte superior */
-left: 50%; /* punto de referencia horizontal */
-transform: translateX(-50%); /* centra realmente */
+/* comportamiento al pasar mouse (opcional) */
+.button-index:hover {
+  filter: brightness(0.98);
 }
 
 .button-backup {

@@ -1,0 +1,56 @@
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Micke</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div>
+    <!-- ID para que el script lo encuentre; mantiene la clase para estilos -->
+    <button id="btn" class="button-index" onclick="location.href='intro.html'">
+      Bienvenida
+    </button>
+  </div>
+
+  <canvas style="display: block; inline-size: 100%; max-inline-size: 700px"
+      width="700" height="550"></canvas>
+
+  <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Script propio: convierte texto en spans y dispara animación -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('btn');
+      if (!btn) return; // seguridad
+
+      const text = btn.textContent.trim();
+      btn.textContent = ''; // limpiar
+
+      const lettersContainer = document.createElement('div');
+      lettersContainer.className = 'letters';
+
+      // crear spans por letra (mantener espacios)
+      Array.from(text).forEach((ch, i) => {
+        const span = document.createElement('span');
+        span.textContent = (ch === ' ') ? '\u00A0' : ch; // nbsp para espacios
+        // delay progresivo en CSS inline — más fiable para muchos navegadores
+        span.style.transitionDelay = `${i * 0.09}s`;
+        lettersContainer.appendChild(span);
+      });
+
+      btn.appendChild(lettersContainer);
+
+      // Forzar reflow para que la transición reconozca el inicio
+      // luego añadimos la clase que activa la animación
+      // (hace la animación visible inmediatamente al cargar)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          btn.classList.add('animate');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

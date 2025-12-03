@@ -138,12 +138,10 @@ h3.fade-title {
 }
 
 .h1-position {
-    position: absolute;
-    top: 8rem;        /* distancia desde la parte superior */
-    left: 12%;        /* lo coloca al centro */
-    right: 15%;
-    transform: translateX(-50%); /* lo centra realmente */
-    text-align: center;
+    width: 100%;
+    text-align: center !important;
+    margin: 1rem 0 1rem;
+    display: block;
 
     /* Opcional: estilo */
     font-size: 56px;
@@ -152,12 +150,11 @@ h3.fade-title {
 }
 
 .h2-position {
-    position: absolute;
-    top: 17rem;        /* distancia desde la parte superior */
-    left: 12%;        /* lo coloca al centro */
-    right: 15%;
-    transform: translateX(-50%); /* lo centra realmente */
-    text-align: center;
+    width: 100%;
+    text-align: center !important;
+    margin: 0rem auto 0rem;
+    max-width: 900px; /* opcional para que no se vea tan ancho */
+    display: block;
 
     /* Opcional: estilo */
     font-size: 36px;
@@ -168,11 +165,17 @@ h3.fade-title {
 /* Koya - Completo */
 
 .koya {
+    display: block;          /* que ocupe espacio (no float afuera) */
+    position: relative;      /* importante para los absolutos hijos */
     margin: 0 auto !important; /* fuerza el centrado */
     width: 250px;              /* ANCHO REAL DE LA CABEZA */
+    height: 5rem;           /* alto base: ajusta según tu figura */
+    pointer-events: auto;    /* recibe clics */
+    transition: transform 0.18s ease;
     transform: translateX(0);  /* elimina desplazamientos previos */
-    top: 32rem;
+
 }
+
 
 
 /* Cabeça */
@@ -376,11 +379,28 @@ h3.fade-title {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 35rem; /* ajusta la distancia bajo el h2 */
-    left: 50%;
+    margin-top: 1rem; /* ajusta la distancia bajo el h2 */
+    cursor: pointer;
+    z-index: 10;
+    text-decoration: none;
+    outline: none;
 }
 
+.koya-link {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* o center si quieres centrar verticalmente dentro de su área */
+  width: 100%;
+  text-decoration: none;   /* quita subrayado del enlace */
+  cursor: pointer;
+  margin-top: 1rem;        /* ajusta la distancia bajo el h2 */
+  /* Opcional: para touch grande en móviles */
+  padding: 1.25rem 0;
 
+}
+.koya * {
+  pointer-events: none;
+}
 
 /* Responsividade */
 

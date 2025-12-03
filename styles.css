@@ -637,6 +637,65 @@ h3.fade-title {
     text-decoration: none;
     color: inherit;
 }
+ /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.body-micke {
+  font-family: Verdana, Geneva, sans-serif;
+	color: rgb(255, 91, 179);
+	background: rgb(252, 203, 228);
+	min-block-size: 100svb;
+	display: grid;
+	place-items: center;
+}
+
+.h2-position2 {
+    width: 100%;
+    text-align: center !important;
+    margin: 2rem auto 0rem;
+    max-width: 900px; /* opcional para que no se vea tan ancho */
+    display: block;
+
+    /* Opcional: estilo */
+    font-size: 36px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
+}
+
+
+.image-card {
+    max-width: 300px;
+    width: 100%; /* para que se ajuste al contenedor en pantallas pequeñas */
+    margin: 10px; /* separación entre tarjetas */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block; /* para que puedan alinearse horizontalmente */
+    vertical-align: top;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* elimina espacios debajo de la imagen */
+}
+
+
+/* Contenedor general de tarjetas */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* permite que bajen a la siguiente fila en móvil */
+    justify-content: center; /* centra las tarjetas horizontalmente */
+    gap: 10px; /* separación entre tarjetas */
+}
+
+/* Responsivo para celular: hace que cada tarjeta ocupe casi todo el ancho */
+@media (max-width: 600px) {
+    .image-card {
+        max-width: 90%; /* ancho casi completo en celular */
+    }
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 .love {
   width: 50px;

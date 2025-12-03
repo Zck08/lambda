@@ -5,52 +5,73 @@
   <title>Micke</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div>
-    <!-- ID para que el script lo encuentre; mantiene la clase para estilos -->
-    <button id="btn" class="button-index" onclick="location.href='intro.html'">
-      Bienvenida
-    </button>
-  </div>
+<body class="body-menu">
+<div>
+    <h1 class="h1-menu">Selecciona que quieres ver</h1>
+    </div>
+<div class="cards-container">
 
-  <canvas style="display: block; inline-size: 100%; max-inline-size: 700px"
-      width="700" height="550"></canvas>
+    <a href="micke.html" class="flip-card-link">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front1">
+                    <p class="title">QUIEN ERES</p>
+                    <p></p>
+                </div>
+                <div class="flip-card-back1">
+                    <p class="title">TU</p>
+                    <p>Algunos de tus datos personales</p>
+                </div>
+            </div>
+        </div>
+    </a>
 
-  <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-  <script src="script.js"></script>
+    <a href="gustos.html" class="flip-card-link">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front2">
+                    <p class="title">TUS GUSTOS</p>
+                    <p></p>
+                </div>
+                <div class="flip-card-back2">
+                    <p class="title">LOS QUE RECUERDO</p>
+                    <p>Un intento de poner las cosas que te gustan</p>
+                </div>
+            </div>
+        </div>
+    </a>
 
-  <!-- Script propio: convierte texto en spans y dispara animación -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('btn');
-      if (!btn) return; // seguridad
+    <a href="suenos.html" class="flip-card-link">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front3">
+                    <p class="title">QUE QUIERES HACER</p>
+                    <p></p>
+                </div>
+                <div class="flip-card-back3">
+                    <p class="title">TUS SUEÑOS</p>
+                    <p>Cosas que quieres y vas hacer</p>
+                </div>
+            </div>
+        </div>
+    </a>
 
-      const text = btn.textContent.trim();
-      btn.textContent = ''; // limpiar
+    <a href="como-te-veo.html" class="flip-card-link">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front4">
+                    <p class="title">MICKE</p>
+                    <p></p>
+                </div>
+                <div class="flip-card-back4">
+                    <p class="title">COMO TE VEO</p>
+                    <p>Una pequeña imagen de como te he visto siempre</p>
+                </div>
+            </div>
+        </div>
+    </a>
 
-      const lettersContainer = document.createElement('div');
-      lettersContainer.className = 'letters';
+</div>
 
-      // crear spans por letra (mantener espacios)
-      Array.from(text).forEach((ch, i) => {
-        const span = document.createElement('span');
-        span.textContent = (ch === ' ') ? '\u00A0' : ch; // nbsp para espacios
-        // delay progresivo en CSS inline — más fiable para muchos navegadores
-        span.style.transitionDelay = `${i * 0.09}s`;
-        lettersContainer.appendChild(span);
-      });
-
-      btn.appendChild(lettersContainer);
-
-      // Forzar reflow para que la transición reconozca el inicio
-      // luego añadimos la clase que activa la animación
-      // (hace la animación visible inmediatamente al cargar)
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          btn.classList.add('animate');
-        });
-      });
-    });
-  </script>
 </body>
 </html>

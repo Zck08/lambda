@@ -615,33 +615,38 @@ h3.fade-title {
     color: inherit;         /* Hereda el color de la tarjeta */
 }
 
+/* Responsivo: celular (una tarjeta por fila) */
 @media (max-width: 600px) {
     .flip-card {
-        width: 90%;          /* Ocupa casi todo el ancho */
-        max-width: 300px;    /* No crecerá demasiado */
-        height: 220px;       /* Un poco más alta para el texto */
+        width: 90%;          /* casi todo el ancho */
+        max-width: 300px;    /* no crece demasiado */
+        height: 220px;
     }
 }
 
-
+/* Responsivo: tablet (2 tarjetas por fila) */
 @media (min-width: 601px) and (max-width: 992px) {
     .flip-card {
-        width: calc(50% - 40px);   /* 2 por fila */
+        width: calc(50% - 20px);  /* 2 por fila */
         max-width: 260px;
         height: 220px;
     }
 }
 
-
-
+/* Responsivo: escritorio (4 tarjetas por fila) */
 @media (min-width: 993px) {
     .flip-card {
-        width: 200px;     /* 4 por fila */
+        width: 200px;
         height: 200px;
     }
 }
 
-
+/* Enlaces de las tarjetas */
+.flip-card-link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
 
 .love {
   width: 50px;

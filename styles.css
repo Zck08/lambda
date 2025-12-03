@@ -99,6 +99,332 @@ font-family: Verdana, Geneva, sans-serif;
   left: 50%;        /* centrar horizontalmente */
   transform: translateX(-50%); /* mover solo horizontal */
   }
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+.body-intro {
+  font-family: Verdana, Geneva, sans-serif;
+	color: hsl(218, 58%, 13%);
+	background: hsl(173, 77%, 76%);
+	min-block-size: 100svb;
+	display: grid;
+	place-items: center;
+}
+
+.fade-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1.3s ease forwards;
+}
+
+/* Diferentes delays para H1, H2, H3 */
+h1.fade-title {
+    font-size: 48px;
+    animation-delay: 0.4s;
+}
+h2.fade-title {
+    font-size: 36px;
+    animation-delay: 1.5s;
+}
+h3.fade-title {
+    font-size: 28px;
+    animation-delay: 0.5s;
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.h1-position {
+    position: absolute;
+    top: 8rem;        /* distancia desde la parte superior */
+    left: 12%;        /* lo coloca al centro */
+    right: 15%;
+    transform: translateX(-50%); /* lo centra realmente */
+    text-align: center;
+
+    /* Opcional: estilo */
+    font-size: 56px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
+}
+
+.h2-position {
+    position: absolute;
+    top: 17rem;        /* distancia desde la parte superior */
+    left: 12%;        /* lo coloca al centro */
+    right: 15%;
+    transform: translateX(-50%); /* lo centra realmente */
+    text-align: center;
+
+    /* Opcional: estilo */
+    font-size: 36px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
+}
+
+/* Koya - Completo */
+
+.koya {
+    margin: 0 auto !important; /* fuerza el centrado */
+    width: 250px;              /* ANCHO REAL DE LA CABEZA */
+    transform: translateX(0);  /* elimina desplazamientos previos */
+    top: 32rem;
+}
+
+
+/* Cabeça */
+
+.head {
+  background-color: #94e1ff;
+  border: 5px solid #000;
+  border-radius: 230px 230px 170px 170px;
+  height: 210px;
+  position: relative;
+  margin: -75px 0;
+  width: 250px;
+  z-index: 999;
+}
+
+.ear {
+  height: 100px;
+  width: 400px;
+  z-index: 0;
+}
+
+.ear-left {
+  background-color: #94e1ff;
+  border: 5px solid #000;
+  border-radius: 70% 60% 43% 60%;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -20px;
+  width: 100px;
+}
+
+.ear-left-internal {
+  background-color: #e7f5fe;
+  border-radius: 70% 60% 43% 60%;
+  height: 65px;
+  margin-left: 25px;
+  margin-top: 25px;
+  width: 65px;
+}
+
+.ear-right {
+  background-color: #94e1ff;
+  border: 5px solid #000;
+  border-radius: 60% 70% 60% 43%;
+  float: right;
+  height: 100px;
+  margin-right: 87px;
+  margin-top: -105px;
+  width: 100px;
+}
+
+.ear-right-internal {
+  background-color: #e7f5fe;
+  border-radius: 60% 70% 60% 43%;
+  float: right;
+  height: 65px;
+  margin-right: 25px;
+  margin-top: 25px;
+  width: 65px;
+}
+
+
+/* Olhos */
+
+.eyes {
+  height: 35px;
+  margin: 0 auto;
+  position: relative;
+  width: 200px;
+}
+
+.eyes-left {
+  background-color: #000;
+  border-radius: 200px 200px 200px 200px;
+  height: 8px;
+  margin-left: 25px;
+  margin-top: 120px;
+  transform: rotate(350deg);
+  width: 37px;
+}
+
+.eyes-right {
+  background-color: #000;
+  border-radius: 200px 200px 200px 200px;
+  float: right;
+  height: 8px;
+  margin-right: 25px;
+  margin-top: -5px;
+  transform: rotate(10deg);
+  width: 37px;
+}
+
+.nose {
+  background: #6f69ef;
+  border: 5px solid;
+  border-radius: 60% 70% 70% 60% / 80% 80% 40% 40%;
+  height: 55px;
+  left: 40%;
+  position: absolute;
+  top: 43%;
+  width: 40px;
+}
+
+.lip {
+  background: transparent;
+  border-bottom: 8px solid;
+  border-radius: 0 0 70% 70% / 0 0 35% 35%;
+  height: 55px;
+  margin: -35px auto;
+  width: 40px;
+}
+
+
+/* Corpo */
+
+.body-content {
+  position: relative;
+  z-index: 100;
+}
+
+.body {
+  background-color: #94e1ff;
+  border-radius: 0 0 50px 50px;
+  height: 115px;
+  margin: 50px 82px;
+  position: relative;
+  width: 100px;
+  z-index: 99;
+}
+
+.tummy {
+  background-color: #fff;
+  border-radius: 40px 40px 50px 50px;
+  height: 97px;
+  margin: auto;
+  width: 77px;
+}
+
+.hands {
+  height: 100px;
+  width: 400px;
+  z-index: 0;
+}
+
+.hand-left {
+  background-color: #94e1ff;
+  border: 5px solid #000;
+  border-radius: 70px 10px 50px 50px;
+  float: left;
+  height: 85px;
+  margin-left: 40px;
+  margin-top: -157px;
+  transform: rotate(45deg);
+  width: 40px;
+}
+
+.hand-right {
+  background-color: #94e1ff;
+  border: 5px solid #000;
+  border-radius: 10px 70px 50px 50px;
+  float: right;
+  height: 85px;
+  margin-right: 180px;
+  margin-top: -157px;
+  transform: rotate(315deg);
+  width: 40px;
+}
+
+.feet {
+  height: 100px;
+  width: 400px;
+  z-index: 0;
+}
+
+.foot-left {
+  background-color: #94e1ff;
+  border: 5px solid #000;
+  border-radius: 0 0 50px 50px;
+  float: left;
+  height: 100px;
+  margin-left: 75px;
+  margin-top: -215px;
+  transform: rotate(3deg);
+  width: 50px;
+}
+
+.foot-right {
+  background-color: #94e1ff;
+  border: 5px solid #000;
+  border-radius: 0 0 50px 50px;
+  float: right;
+  height: 100px;
+  margin-right: 210px;
+  margin-top: -215px;
+  transform: rotate(356deg);
+  width: 50px;
+}
+
+.koya-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 35rem; /* ajusta la distancia bajo el h2 */
+    left: 50%;
+}
+
+
+
+/* Responsividade */
+
+@media screen and (max-width: 1200px) {
+  .content-text {  
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .koya {
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    display: inline;
+    margin: 0 auto;
+  }
+  
+  .content-text {
+    margin: 0 30%;
+    transform: translateY(400px);
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .koya {
+     width: 200px; /* reduce tamaño sin moverla */
+  }
+}
+
+/*@media screen and (max-width: 750px) {
+  .koya {
+    transform: translateX(25%);
+  }
+}*/
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+
 
 .love {
   width: 50px;

@@ -698,13 +698,14 @@ h3.fade-title {
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .body-sueños {
   font-family: Verdana, Geneva, sans-serif;
-	color: rgb(19, 54, 16);
-	background: rgb(182, 238, 176);
-	min-block-size: 100svb;
-	display: grid;
-	place-items: center;
+  color: rgb(19, 54, 16);
+  background: rgb(182, 238, 176);
+  min-height: 100vh;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra horizontal */
 }
-
 .card {
   width: 850px;
   margin: 20px;
@@ -750,74 +751,132 @@ h3.fade-title {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.footer-space {
-  height: 5rem; /* Espacio deseado */
+.h1-positiond {
+    width: 100%;
+    text-align: center !important;
+    margin: 3rem 0 5rem;
+    display: block;
+    /* Opcional: estilo */
+    font-size: 56px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
 }
 
-.love {
-  width: 50px;
-  height: 50px;
-  transform: rotate(45deg);
-  background: rgb(33, 4, 53);
+.h3-positiond {
+    width: 100%;
+    text-align: center !important;
+    margin: 3rem 0 5rem;
+    display: block;
+
+    /* Opcional: estilo */
+    font-size: 34px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
 }
 
-.love:before,
-.love:after {
-  content: "";
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background: rgb(33, 4, 53);
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.body-gustos {
+  font-family: Verdana, Geneva, sans-serif;
+	color: #390244;
+	background: #EED0F2;
+	min-block-size: 100svb;
+	display: grid;
+	place-items: center;
 }
 
-.love {
-  width: 50px;
-  height: 50px;
-  transform: rotate(45deg);
-  background: rgb(33, 4, 53);
-  position: relative;
-  top: 10rem;
-  left: 10rem;
+.h1-position3 {
+    width: 100%;
+    text-align: center !important;
+    margin: 3rem 0 5rem;
+    display: block;
+    background-color: #EED0F2;
+    font-size: 56px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
 }
 
-.love:before,
-.love:after {
-  content: "";
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+.h2-position3 {
+    width: 100%;
+    text-align: center !important;
+    margin: 2rem auto 0rem;
+    max-width: 900px; /* opcional para que no se vea tan ancho */
+    display: block;
+    background-color: #EED0F2;
+    /* Opcional: estilo */
+    font-size: 36px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* no bloquea clics */
+}
+
+/* Estilo base del corazón */
+.heart {
+  width: 20px;
+  height: 20px;
   background: rgb(33, 4, 53);
   position: absolute;
-}
-
-.love:before {
-  top: 0;
-  left: -25px;
-}
-
-.love:after {
-  top: -25px;
-}
-
-.love {
-  width: 50px;
-  height: 50px;
   transform: rotate(45deg);
-  background: rgb(33, 4, 53);
-  position: relative;
-  top: 10rem;
-  left: 10rem;
-  animation: beating 2s ease infinite;
+  animation: beat 2s infinite ease;
 }
 
-@keyframes beating {
-  0% {
-  	transform: rotate(45deg) scale(1);
-  }
-  50% {
-    transform: rotate(45deg) scale(2);
-  }
-  100% {
-  	transform: rotate(45deg) scale(1);
-  }
+.heart:before,
+.heart:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: rgb(33, 4, 53);
+  position: absolute;
+  border-radius: 50%;
 }
+
+.heart:before {
+  left: -10px;
+}
+
+.heart:after {
+  top: -10px;
+}
+
+@keyframes beat {
+  0%, 100% { transform: rotate(45deg) scale(1); }
+  50% { transform: rotate(45deg) scale(1.4); }
+}
+
+
+.body-f {
+  font-family: Verdana, Geneva, sans-serif;
+	color: #E34234;
+	background: #e0a7a2;
+	min-block-size: 100svb;
+	display: grid;
+	place-items: center;
+}
+
+.h1-positionf {
+    width: 100%;
+    text-align: center !important;
+    margin: 3rem 0 5rem;
+    display: block;
+    font-size: 56px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
+}
+
+.h2-positionf {
+    width: 100%;
+    text-align: center !important;
+    margin: 2rem auto 3rem;
+    max-width: 900px; /* opcional para que no se vea tan ancho */
+    display: block;
+    /* Opcional: estilo */
+    font-size: 36px;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
+}
+
+
